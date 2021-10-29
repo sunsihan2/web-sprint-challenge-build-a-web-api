@@ -147,7 +147,53 @@ We have provided test data for all the resources.
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+ Node.js shines in real-time web applications employing push technology over websockets.
+ express is a free and open-source web application framework for node.js. It is used for designing and building web applications quickly and easily. Express is lightweight and helps to organize web applications on the server-side into a more organized MVC architecture.
+
+
 1. Understand and explain the use of Middleware.
+Middleware is software that lies between an operating system and the applications running on it. Essentially functioning as hidden translation layer, middleware enables communication and data management for distributed applications. It’s sometimes called plumbing, as it connects two applications together so data and databases can be easily passed between the “pipe.” Using middleware allows users to perform such requests as submitting forms on a web browser, or allowing the web server to return dynamic web pages based on a user’s profile.
+
 1. The basic principles of the REST architectural style.
+REST is a client-server architecture. The client and the server both have a different set of concerns. The server stores and/or manipulates information and makes it available to the user in an efficient manner. The client takes that information and displays it to the user and/or uses it to perform subsequent requests for information. This separation of concerns allows both the client and the server to evolve independently as it only requires that the interface stays the same.
+
+REST is stateless. That means the communication between the client and the server always contains all the information needed to perform the request. There is no session state in the server, it is kept entirely on the client's side. If access to a resource requires authentication, then the client needs to authenticate itself with every request.
+
+REST is cacheable. The client, the server and any intermediary components can all cache resources in order to improve performance.
+
+REST provides a uniform interface between components. This simplifies the architecture, as all components follow the same rules to speak to one another. It also makes it easier to understand the interactions between the different components of the system. A number of constraints are required to achieve this. They are covered in the rest of the chapter.
+
+REST is a layered system. Individual components cannot see beyond the immediate layer with which they are interacting. This means that a client connecting to an intermediate component, like a proxy, has no knowledge of what lies beyond. This allows components to be independent and thus easily replaceable or extendable.
+
+REST optionally provides code on demand. Code may be downloaded to extend client functionality. This is optional however because the client may not be able to download or run this code, and so a REST component cannot rely on it being executed.
+
+
+
 1. Understand and explain the use of Express Routers.
+The express.Router() function is used to create a new router object. This function is used when you want to create a new router object in your program to handle requests.
+
 1. Describe tooling used to manually test the correctness of an API.
+Step 1: Create API testing requirements. To be able to plan API tests, first, you need to determine testing boundaries and requirements. You’ll be answering questions like:
+
+the purpose of the API and its target consumer;
+the workflow of the application;
+the features and functions of the API;
+other APIs this API interacts with;
+aspects of testing;
+the problems we’re testing for;
+priorities in testing;
+the desired output;
+the definition of Pass and Fail.
+Step 2: Establish the API test environment. When you determined the functional scope of your API, the next step is setting up an API test environment which is usually the task of DevOps engineers. It requires the configuration of the servers, databases, and every resource the API interacts with, depending on the software requirements.
+
+Step 3: Make a trial API call. Before diving into thorough testing, make an API call just to check that nothing is broken and the API is operational.
+
+Step 4: Define the input parameters. Plan all possible input combinations. You’re going to use them in your test cases, and later – to authenticate the results to determine whether the API performs as expected.
+
+Step 5: Create API test cases. After all the preparations are done, you can write and execute test cases, and, in the end, compare actual results with the expected ones. A good practice is to group them by test category. Examples of API test cases include:
+
+testing value in response to the input condition: You define the input and authenticate the output, which can be any type of data or status (e.g. Pass or Fail);
+checking the behavior of the API in the system when there is no return value in response;
+tracking events or interruptions triggered by the output;
+authenticating the effect on the system after data structure updates;
+validating resources modified by the API call.
